@@ -3,7 +3,10 @@
 .inicio {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     background-color: black;
+    
+    /* border: 1px solid white; */
 
 }
 .logo {
@@ -15,13 +18,24 @@
     color: white;
 }
 
-.corpo {
-    /* padding-left: 10px; */
-    
+.topo {
+    display: flex;
+    justify-content: right;
+    margin-right: 24px;
+    /* border: 2px solid white; */
+    width: 20vw;
+    gap: 50px;
 }
 
+.topo a, a:hover, a:active, a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+
+
 .tecnologias {
-    height: 1000px;
+    height: 90vh;
     align-items: center;
 
 }
@@ -48,6 +62,7 @@
 .imgprojeto {
     width: 100%;
     height: auto;
+    border-radius: 20px;
 }
 
 .projeto {
@@ -58,11 +73,15 @@
     border-radius: 20px;
     margin: 0 auto;
     text-align: center;
-    height: 65vh;
+    height: 70vh;
     width: 20vw;
     max-width: 272px;
-    max-height: 884px;
+    max-height: 90vh;
+    min-height: auto;
     bottom: 5px;
+    border: 1px solid;
+    box-shadow: 0 0 20px #90EE90, inset 0 0 20px #90EE90;
+    border-image: linear-gradient(45deg #90EE90, #002500) 1;
 }
 
 .projeto p {
@@ -89,32 +108,64 @@
 
 
 
-
-.blocotec1 {
-    background-image: url(../assets/livro-aberto.jpeg);
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    height: 30vh;
-    max-height: 380px;
-    width: 80vw;
-    max-width: 950px;
-    border: 1px solid white;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 15px;
-    text-align: right;
-    position: relative;
-    
+.blocotec {
+    display: flex;
+    justify-content: center;
 }
 
-.textotec {
-    position: absolute;
-    bottom: 10px;
-    right: 15px;
+.blocotec hr {
+    width: 70%;
+    border-color: gray;
+}
+
+.tec-content {
+    width: 30vw;
+    height: 60vh;
+    background-color: #002500;
+    border: 1px solid;
+    box-shadow: 0 0 20px #90EE90, inset 0 0 20px #90EE90;
+    border-image: linear-gradient(45deg #90EE90, #002500) 1;
+    border-radius: 20px;
+    text-align: center;
 }
 
 
+.tec-content:not(:last-child) {
+    margin-right: 20px;
+}
 
+
+
+
+#prevs, #nexts {
+    z-index: 1;
+}
+
+.btns-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    z-index: 1;
+}
+
+.btn-slide {
+    width: 3vw;
+    height: 3vw;
+    border-radius: 50%;
+    background-color: #002500;
+    border: 1px solid #90EE90;
+    box-shadow: 0 0 10px #90EE90, inset 0 0 10px #90EE90;
+    border-image: linear-gradient(45deg #90EE90, #002500) 1;
+    color: white;
+    cursor: pointer;
+    ;
+}
+
+.btn-slide:hover {
+    box-shadow: 0 0 20px #90EE90, inset 0 0 20px #90EE90;
+    transition: 0.5s;
+}
 
 
 
@@ -123,14 +174,15 @@
 .slider {
     margin: 0 auto;
     width: 100%;
-    height: 500px;
+    height: 80vh;
     overflow: hidden;
 }
 
 .slides {
     width: 400%;
-    height: 500px;
+    height: 80vh;
     display: flex;
+    align-items: center;
 }
 
 .slides input {
@@ -146,110 +198,45 @@
     width: 100%;
 }
 
-.manual-navigation {
-    position: absolute;
-    width: 99%;
-    margin-top: 530px;
-    display: flex;
-    justify-content: center;
-}
-
-.manual-btn {
-    border: 2px solid white;
-    padding: 5px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: 1s;
-}
-
-.manual-btn:not(:last-child) {
-    margin-right: 40px;
-}
-
-.manual-btn:hover {
-    background-color: white;
-}
-
-#radio1:checked ~ .first {
-    margin-left: 0;
-    transition: 2s;
-}
-#radio2:checked ~ .first {
-    margin-left: -25%;
-    transition: 2s;
-}
-#radio3:checked ~ .first {
-    margin-left: -50%;
-    transition: 2s;
-}
-#radio4:checked ~ .first {
-    margin-left: -75%;
+.first {
     transition: 2s;
 }
 
 
+/* Desktops grandes */
+/* Tablets (até 768px) */
+@media (max-width: 768px) {
+    .blocosprojetos {
+        flex-wrap: wrap; /* Permite quebrar linha */
+        justify-content: center;
+        gap: 20px;
+        height: auto;
+    }
 
-#radio21:checked ~ .first {
-    margin-left: 0;
-    transition: 2s;
-}
-#radio22:checked ~ .first {
-    margin-left: -25%;
-    transition: 2s;
-}
-#radio23:checked ~ .first {
-    margin-left: -50%;
-    transition: 2s;
-}
-#radio24:checked ~ .first {
-    margin-left: -75%;
-    transition: 2s;
-}
+    .projeto {
+        width: 60%; /* Menor que no desktop */
+        max-width: 300px;
+        height: auto;
+    }
 
-.navigation-auto div {
-    border: 2px solid #20a6ff;
-    padding: 5px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: 1s;
+    .slider, .slides {
+        height: auto;
+    }
 }
 
-.navigation-auto {
-    position: absolute;
-    width: 99%;
-    margin-top: 530px;
-    display: flex;
-    justify-content: center;
+/* Celulares (até 576px) */
+@media (max-width: 576px) {
+    .projeto {
+        width: 80%; /* Mais estreito que a tela inteira */
+        max-width: 260px;
+    }
 }
 
-.navigation-auto div:not(:last-child) {
-    margin-right: 40px;
+/* Celulares bem pequenos (até 400px) */
+@media (max-width: 400px) {
+    .projeto {
+        width: 90%;
+        max-width: 240px;
+    }
 }
 
-#radio1:checked ~ .navigation-auto .auto-btn1 {
-    background-color: white;
-}
-#radio2:checked ~ .navigation-auto .auto-btn2 {
-    background-color: white;
-}
-#radio3:checked ~ .navigation-auto .auto-btn3 {
-    background-color: white;
-}
-#radio4:checked ~ .navigation-auto .auto-btn4 {
-    background-color: white;
-}
-
-
-
-#radio21:checked ~ .navigation-auto .auto-btn21 {
-    background-color: white;
-}
-#radio22:checked ~ .navigation-auto .auto-btn22 {
-    background-color: white;
-}
-#radio23:checked ~ .navigation-auto .auto-btn23 {
-    background-color: white;
-}
-#radio24:checked ~ .navigation-auto .auto-btn24 {
-    background-color: white;
-}

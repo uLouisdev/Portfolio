@@ -11,9 +11,14 @@ body {
 
 h1 {
     font-size: 3em;
-    margin-left: 10px;
+    /* margin-left: 10px; */
+    text-align: center;
 }
 
 p {
     font-size: 1em;
+}
+
+html {
+    scroll-behavior: smooth;
 }
